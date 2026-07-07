@@ -2,7 +2,6 @@
 
 import { TarefasContext } from "@/context/TarefasContext";
 import { useContadorDeTarefas } from "@/hooks/useContadorDeTarefas";
-import { Tarefa } from "@/types/Tarefa";
 import { useContext, useState } from "react";
 
 function NovaTarefaForm() {
@@ -42,21 +41,21 @@ function NovaTarefaForm() {
         <h2 className="text-2xl font-bold text-gray-800">
             Adicione uma nova tarefa
         </h2>
-         <div className="flex gap-3">
-            <input
-                type="text"
-                placeholder="Digite uma tarefa..."
-                value={titulo}
-                onChange={(e) => setTitulo(e.target.value)}
-                className="flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-800 outline-none transition focus:border-black"
-            />
+        <div className="flex flex-col gap-3 sm:flex-row">
+        <input
+            type="text"
+            placeholder="Digite uma tarefa..."
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
+            className="flex-1 rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-800 outline-none transition focus:border-black"
+        />
 
-            <button
-                type="submit"
-                className="rounded-xl bg-black px-5 py-3 font-semibold text-white transition hover:bg-gray-800 active:scale-95"
-            >
+        <button
+            type="submit"
+            className="w-full rounded-xl bg-black px-5 py-3 font-semibold text-white transition hover:bg-gray-800 active:scale-95 sm:w-auto"
+        >
             Enviar
-            </button>
+        </button>
         </div>
     </form>
     );
