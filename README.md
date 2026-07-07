@@ -112,3 +112,12 @@ Os testes verificam:
 
 ---
 
+## 🚀 Deploy
+
+A aplicação está disponível em produção:
+
+**🌐 https://tarefas-seven-eta.vercel.app/**
+
+Ou acesse diretamente clicando no link abaixo:
+
+👉 https://tarefas-seven-eta.vercel.app/
