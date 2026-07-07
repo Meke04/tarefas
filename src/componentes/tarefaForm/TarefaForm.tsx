@@ -7,11 +7,14 @@ import { useContext, useState } from "react";
 function NovaTarefaForm() {
 
     const context = useContext(TarefasContext);
+    const [titulo, setTitulo] = useState("");
+
+    const tarefas = context?.tarefas ?? [];
+    const totalDeTarefas = useContadorDeTarefas(tarefas)
 
     if(!context) return null;
 
-    const { tarefas, setTarefas } = context;
-    const [titulo, setTitulo] = useState("");
+    const { setTarefas } = context;
 
 
     const adicionarTarefa: React.SubmitEventHandler<HTMLFormElement> = (e) => {
@@ -34,7 +37,7 @@ function NovaTarefaForm() {
     <form onSubmit={ adicionarTarefa } className="mb-8 flex flex-col gap-5 rounded-2xl p-6">
         <p className="text-sm text-gray-500"> Atualmente existem{" "}
             <span className="font-bold text-black">
-                {useContadorDeTarefas(tarefas)}
+                {totalDeTarefas}
             </span>{" "}
             tarefas cadastradas
         </p>

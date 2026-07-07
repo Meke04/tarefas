@@ -21,6 +21,7 @@ export function TarefasProvider({children}: TarefasProviderProps ){
         const tarefasSalvas = localStorage.getItem("tarefas");
 
         if (tarefasSalvas) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setTarefas(JSON.parse(tarefasSalvas));
         }
     }, []);
