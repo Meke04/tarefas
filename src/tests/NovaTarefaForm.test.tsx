@@ -19,7 +19,10 @@ describe("NovaTarefaForm", () => {
       </TarefasContext.Provider>
     );
 
-    expect(screen.getByText(/atualmente existem 1 tarefas cadastradas/i)).toBeTruthy();
+    expect(screen.getByText((_, element) => {
+      return element?.textContent === " Atualmente existem 1 tarefas cadastradas";
+    })
+    ).toBeTruthy();
     expect(screen.getByText(/adicione uma nova tarefa/i)).toBeTruthy();
     expect(screen.getByPlaceholderText(/tarefa/i)).toBeTruthy();
     expect(screen.getByRole("button", { name: /enviar/i })).toBeTruthy();
